@@ -8,7 +8,7 @@ public class AbstractFactory {
 }
 
 class GetMemberOf {
-    Car car = null;
+    Car car;
     enum cars{
         VOLVO,
         BMV
@@ -34,7 +34,7 @@ interface Car {
 }
 
 class Wheel {
-    private String owner;
+    private final String owner;
 
     public Wheel(String owner) {
         this.owner = owner;
@@ -46,7 +46,7 @@ class Wheel {
 }
 
 class Body {
-    private String owner;
+    private final String owner;
 
     public Body(String owner) {
         this.owner = owner;
