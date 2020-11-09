@@ -28,7 +28,7 @@ class Context {
 }
 
 interface Strategy {
-    public int execute(int a, int b);
+    int execute(int a, int b);
 }
 
 class StrategyAdd implements Strategy {
