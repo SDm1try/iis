@@ -6,9 +6,9 @@ public class JavaRunner {
     public static void main(String[] args) {
         String[] skills = {"Java", "Spring", "Hibernate", "Git", "Maven"};
 
-        Car car = new Car("Simba", skills);
+        JavaDeveloper javaDeveloper = new JavaDeveloper("Simba", skills);
 
-        Iterator iterator = car.getIterator();
+        Iterator<String> iterator = javaDeveloper.getIterator();
 
         while (iterator.hasNext()){
             System.out.println(iterator.next());
@@ -16,21 +16,21 @@ public class JavaRunner {
     }
 }
 
-class Car implements Collection{
+class JavaDeveloper implements Collection{
     private final String name;
     private final String[] skills;
 
-    public Car(String name, String[] skills) {
+    public JavaDeveloper(String name, String[] skills) {
         this.name = name;
         this.skills = skills;
     }
 
     @Override
     public Iterator<String> getIterator() {
-        return new CarIterator();
+        return new DeveloperIterator();
     }
 
-    private class CarIterator implements Iterator<String>{
+    private class DeveloperIterator implements Iterator<String>{
         private int index;
         @Override
         public boolean hasNext() {
